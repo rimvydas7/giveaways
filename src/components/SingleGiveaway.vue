@@ -11,6 +11,9 @@
         <div v-else>
           <h2 class="yellow">{{ giveaway.worth }}</h2>
         </div>
+        <div v-if="giveaway.worth === 'N/A'">
+          <h2 class="green">Free</h2>
+        </div>
 
         <h5>Platforms: {{ giveaway.platforms }}</h5>
         <h5>Type: {{ giveaway.type }}</h5>

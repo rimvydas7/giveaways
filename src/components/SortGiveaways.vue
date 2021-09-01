@@ -51,11 +51,15 @@
           <h2>{{ item.title }}</h2>
           <h3>{{ item.description }}</h3>
           <img :src="item.image" alt="" />
+
           <div v-if="item.worth.length <= 5">
             <h2 class="green">{{ item.worth }}</h2>
           </div>
           <div v-else>
             <h2 class="yellow">{{ item.worth }}</h2>
+          </div>
+          <div v-if="item.worth === 'N/A'">
+            <h2 class="green">Free</h2>
           </div>
 
           <h4>Type: {{ item.type }}</h4>
