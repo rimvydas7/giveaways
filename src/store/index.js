@@ -32,7 +32,7 @@ export default new Vuex.Store({
       const res = await fetch(url);
       const json = await res.json();
 
-      console.log(json);
+      // console.log(json);
       context.commit("setGiveaways", json);
     },
     getGiveaway(context, data) {

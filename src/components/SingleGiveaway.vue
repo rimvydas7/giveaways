@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grey">
+    <div class="bg">
       <div class="single">
         <h2>{{ giveaway.title }}</h2>
         <h3>{{ giveaway.description }}</h3>
@@ -27,11 +27,6 @@
 <script>
 export default {
   name: "SingleGiveaway",
-  data() {
-    return {
-      one: {},
-    };
-  },
   computed: {
     giveaway() {
       return this.$store.state.giveaway;
@@ -49,7 +44,7 @@ export default {
 </script>
 
 <style scoped>
-.grey {
+.bg {
   background-color: rgb(132, 132, 154);
   padding: 20px;
 }

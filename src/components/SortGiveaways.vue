@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgc">
+    <div class="bg">
       <h1>Filter giveaways:</h1>
       <div>
         <div>
@@ -94,7 +94,7 @@ export default {
         .then((res) => res.json())
         .then((data) => {
           this.$store.dispatch("getGiveaway", data);
-          console.log(this.$store.state.giveaway);
+          // console.log(this.$store.state.giveaway);
         });
       this.$router.push("/giveaways/id/" + id);
     },
@@ -109,16 +109,15 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-.bgc label {
+.bg label {
   color: white;
   font-weight: bold;
 }
-.bgc {
+.bg {
   background-color: rgb(132, 132, 154);
 }
-.bgc h1 {
+.bg h1 {
   padding: 20px;
 }
 button {
