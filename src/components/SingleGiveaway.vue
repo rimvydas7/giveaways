@@ -43,7 +43,7 @@ export default {
       .then((res) => res.json())
       .then((data) => {
         this.$store.dispatch("getGiveaway", data);
-        console.log(this.$store.state.giveaway);
+        // console.log(this.$store.state.giveaway);
       });
   },
 };

@@ -117,15 +117,15 @@ export default {
 };
 </script>
 <style scoped>
-.bg label {
-  color: white;
-  font-weight: bold;
-}
 .bg {
   background-color: rgb(132, 132, 154);
 }
 .bg h1 {
   padding: 20px;
+}
+.bg label {
+  color: white;
+  font-weight: bold;
 }
 button {
   padding: 5px 20px;
