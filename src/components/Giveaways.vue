@@ -38,14 +38,17 @@
           <h3>{{ item.description }}</h3>
           <img :src="item.image" alt="" />
 
-          <div v-if="item.worth.length <= 5">
+          <div v-if="item.worth === 'N/A'">
+            <h2 class="orange">Free</h2>
+          </div>
+          <div v-if="item.worth.length == 5">
             <h2 class="green">{{ item.worth }}</h2>
+          </div>
+          <div v-else-if="item.worth.length == 3">
+            <h2 class="green"></h2>
           </div>
           <div v-else>
             <h2 class="yellow">{{ item.worth }}</h2>
-          </div>
-          <div v-if="item.worth === 'N/A'">
-            <h2 class="green">Free</h2>
           </div>
 
           <h4>Type: {{ item.type }}</h4>
@@ -140,12 +143,13 @@ export default {
   background-color: rgb(132, 132, 154);
 }
 .single {
+  contain: content;
   padding: 10px;
   cursor: pointer;
   background-color: rgb(93, 115, 189);
   margin: 20px auto;
   width: 550px;
-  max-height: 500px;
+  height: 500px;
   border-radius: 5%;
 }
 .single:hover {
@@ -159,5 +163,8 @@ export default {
 }
 .yellow {
   color: rgb(210, 210, 10);
+}
+.orange {
+  color: rgb(247, 171, 29);
 }
 </style>

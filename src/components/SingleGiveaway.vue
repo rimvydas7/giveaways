@@ -5,14 +5,17 @@
         <h2>{{ giveaway.title }}</h2>
         <h3>{{ giveaway.description }}</h3>
 
-        <div v-if="giveaway.worth.length <= 5">
+        <div v-if="giveaway.worth === 'N/A'">
+          <h2 class="orange">Free</h2>
+        </div>
+        <div v-if="giveaway.worth.length == 5">
           <h2 class="green">{{ giveaway.worth }}</h2>
+        </div>
+        <div v-else-if="giveaway.worth.length == 3">
+          <h2 class="green"></h2>
         </div>
         <div v-else>
           <h2 class="yellow">{{ giveaway.worth }}</h2>
-        </div>
-        <div v-if="giveaway.worth === 'N/A'">
-          <h2 class="green">Free</h2>
         </div>
 
         <h5>Platforms: {{ giveaway.platforms }}</h5>
@@ -52,6 +55,7 @@ export default {
   padding: 20px;
 }
 .single {
+  contain: content;
   background-color: rgb(93, 115, 189);
   margin: 0 auto;
   padding: 10px;
@@ -79,5 +83,8 @@ export default {
 }
 .yellow {
   color: rgb(210, 210, 10);
+}
+.orange {
+  color: rgb(247, 171, 29);
 }
 </style>
